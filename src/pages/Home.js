@@ -110,7 +110,7 @@ function Home() {
               type="tel"
               name="roll"
               onChange={handleInputChange}
-              value={roll}
+              value={user.roll}
               size={30}
               placeholder="You Roll No. here"
               className="rounded px-4 py-2 text-black"
