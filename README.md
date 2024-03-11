@@ -1,6 +1,8 @@
-# AttendQR ![Logo](https://raw.githubusercontent.com/imfarhat/AttendQR/main/src/assets/images/logos/AttendQR.png)
+# <div align="center"><img src="https://raw.githubusercontent.com/imfarhat/AttendQR/main/src/assets/images/logos/AttendQR.png" alt="SkipPi&#960;" height="100"></div>
 
-QR Code based Attendance App [Link to App](https://attendqr.pages.dev).
+## AttendQR : QR Code based Attendance App
+
+[Link to AttendQR App](https://attendqr.pages.dev)
 
 ## Available Scripts
 
