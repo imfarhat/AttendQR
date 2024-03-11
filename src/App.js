@@ -1,7 +1,8 @@
+import Home from "./pages/Home.js";
 function App() {
   return (
     <>
-      <h1 className="">Attend QR App</h1>
+      <Home />
     </>
   );
 }
