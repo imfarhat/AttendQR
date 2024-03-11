@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 function Home() {
   const [user, setUser] = useState({
-    subEmail: "",
-    resumeEmail: "",
-    folioRating: null,
+    roll: "",
+    resetId: "",
   });
 
   let name, value;
@@ -72,11 +71,10 @@ function Home() {
       // Handle error here
     } finally {
       setUser({
-        subEmail: "",
-        resumeEmail: "",
-        folioRating: null,
+        roll: "",
+        resetId: "",
       });
-      et.reset(); // Reset the form
+      //et.reset(); // Reset the form
       setTimeout(() => {
         submitButton.innerHTML = submitBtnInitailaValue;
         submitButton.disabled = false; // Enable submit button
@@ -112,6 +110,7 @@ function Home() {
               type="tel"
               name="roll"
               onChange={handleInputChange}
+              value={roll}
               size={30}
               placeholder="You Roll No. here"
               className="rounded px-4 py-2 text-black"
