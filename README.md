@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# AttendQR ![Logo](https://raw.githubusercontent.com/imfarhat/AttendQR/main/src/assets/images/logos/AttendQR.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+QR Code based Attendance App [Link to App](https://attendqr.pages.dev).
 
 ## Available Scripts
 
