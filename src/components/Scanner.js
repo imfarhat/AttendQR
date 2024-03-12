@@ -1,7 +1,6 @@
 import { Html5QrcodeScanner } from "html5-qrcode";
 import { useState, useEffect } from "react";
 
-
 function Scanner({ onScanResult }) {
   const [scanResult, setScanResult] = useState(null);
 
@@ -32,7 +31,7 @@ function Scanner({ onScanResult }) {
     return () => {
       scanner.clear();
     };
-  }, [onScanResult]); // This effect should only run once when component mounts
+  }); // This effect should only run once when component mounts
 
   useEffect(() => {
     const imgSelector = 'img[alt="Info icon"]';
