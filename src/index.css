@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer components {
+  body {
+    @apply transition-all duration-150 md:duration-200 ease-in;
+  }
+  * {
+    @apply transition-all duration-150 md:duration-200 ease-in;
+  }
   .nav-link-n {
     @apply p-0.5 gap-1 flex flex-col md:flex-row md:gap-1.5 items-center justify-center rounded font-semibold bg-black/[0.075] backdrop-blur-sm transition-all md:duration-200 ease-in active:bg-white/85 active:text-[#16181d] hover:bg-white hover:text-[#16181d] select-none;
   }

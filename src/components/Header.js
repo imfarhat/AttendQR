@@ -13,7 +13,8 @@ function Header() {
           >
             <img
               src="https://raw.githubusercontent.com/imfarhat/AttendQR/main/public/apple-touch-icon.png"
-              alt="AttendQR Logo"
+              alt="AttendQR"
+              loading="eager"
               className="h-12 rounded shadow-sm"
             />
           </a>
@@ -27,6 +28,7 @@ function Header() {
             <img
               src="https://farhateservices.pages.dev/logo-head-black.png"
               alt="Farhat e Services & Assitance"
+              loading="lazy"
               className="h-12 rounded shadow-sm bg-white"
             />
           </a>
