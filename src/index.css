@@ -57,6 +57,9 @@
   button {
     @apply disabled:bg-black/50 disabled:scale-95 transition duration-150 md:duration-200;
   }
+  input {
+    @apply read-only:bg-black/5 transition duration-150 md:duration-200;
+  }
   .animate-reverse-spin {
     animation: reverse-spin 1s linear infinite;
   }

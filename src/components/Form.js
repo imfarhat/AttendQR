@@ -101,17 +101,21 @@ function Form({ scanResult }) {
               onSubmit={handleForm}
               className="flex flex-col items-center justify-center gap-6"
             >
-              <input
-                type="tel"
-                name="roll"
-                id="roll"
-                required
-                value={scanResult}
-                readOnly
-                size={30}
-                placeholder="Your University Roll No. (last 2 digits)"
-                className="border-2 border-sky-500 focus:outline-none focus:valid:border-green-500 shadow-md rounded px-3 py-2 text-black"
-              />
+              <div className="flex flex-col items-start justify-center bg-white relative">
+                <label className="absolute -top-2.5 py-0.5 px-1.5 text-xs left-2 bg-white rounded" htmlFor="roll">University Roll No.</label>
+                <input
+                  type="tel"
+                  name="roll"
+                  id="roll"
+                  required
+                  value={scanResult}
+                  readOnly
+                  size={30}
+                  pattern="[0-9]{2,15}"
+                  placeholder="Your University Roll No."
+                  className="border-2 border-sky-500 focus:outline-none focus:valid:border-green-500 shadow-md rounded px-3 py-2 text-black"
+                />
+              </div>
 
               <button
                 type="submit"
