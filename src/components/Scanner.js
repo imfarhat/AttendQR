@@ -110,7 +110,7 @@ function Scanner({ onScanResult }) {
         "justify-center"
       );
     }
-  }, [scanResult]);
+  }, [scanResult, scannerEnabled]);
 
   return (
     <>
