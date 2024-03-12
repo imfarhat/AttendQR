@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <Scanner />
+      <Home />
     </>
   );
 }
