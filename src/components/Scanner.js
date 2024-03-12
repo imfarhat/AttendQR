@@ -11,7 +11,7 @@ function Scanner({ onScanResult }) {
         width: 250,
         height: 250,
       },
-      fps: 5,
+      fps: 30,
     });
 
     const success = (result) => {
