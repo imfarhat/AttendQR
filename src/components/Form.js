@@ -30,8 +30,6 @@ function Form({ scanResult }) {
 
         formData.append("latitude", position.coords.latitude);
         formData.append("longitude", position.coords.longitude);
-      } else {
-        window.alert("Please allow location to continue...");
       }
 
       // Example: log the formData for demonstration
