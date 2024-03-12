@@ -31,7 +31,7 @@ function Home() {
       formData.append("submitDate", submitDate);
       formData.append("submitTime", submitTime);
       formData.append("formName", et.name);
-      formData.append("origin", "https://attendqr.pages.dev");
+      formData.append("origin", window.location.origin);
       if (navigator.geolocation) {
         const position = await new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject);
@@ -58,11 +58,14 @@ function Home() {
         throw new Error("Network response was not ok");
       }
 
-      const { result } = await response.json();
-      console.log("Response:", result);
-      if (result === "error") {
-        throw new Error("Backend response was not ok");
+      const res = await response.json();
+
+      console.log("Response:", res.result);
+
+      if (res.result === "error") {
+        throw new Error(res.error);
       }
+
       submitButton.innerHTML = "Success &check;";
       // Handle success response here
     } catch (error) {
