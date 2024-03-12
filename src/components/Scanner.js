@@ -32,7 +32,7 @@ function Scanner({ onScanResult }) {
     return () => {
       scanner.clear();
     };
-  }, []); // This effect should only run once when component mounts
+  }, [onScanResult]); // This effect should only run once when component mounts
 
   useEffect(() => {
     const imgSelector = 'img[alt="Info icon"]';
