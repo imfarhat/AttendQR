@@ -11,7 +11,7 @@ function Scanner({ onScanResult }) {
         width: 250,
         height: 250,
       },
-      fps: 30,
+      fps: 5,
     });
 
     const success = (result) => {
@@ -32,7 +32,7 @@ function Scanner({ onScanResult }) {
     return () => {
       scanner.clear();
     };
-  }, [onScanResult]); // This effect should only run once when component mounts
+  }, []); // This effect should only run once when component mounts
 
   useEffect(() => {
     const imgSelector = 'img[alt="Info icon"]';
