@@ -1,3 +1,227 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .nav-link-n {
+    @apply p-0.5 gap-1 flex flex-col md:flex-row md:gap-1.5 items-center justify-center rounded font-semibold bg-black/[0.075] backdrop-blur-sm transition-all md:duration-200 ease-in active:bg-white/85 active:text-[#16181d] hover:bg-white hover:text-[#16181d] select-none;
+  }
+  .nav-link-w {
+    @apply px-1.5 pt-1.5 pb-0.5 md:px-2 md:pt-2.5 md:pb-2 flex flex-col md:flex-row md:gap-1.5 items-center justify-center rounded-t-xl font-semibold bg-white/[0.075] backdrop-blur-sm transition-all md:duration-200 ease-in active:bg-white/85 active:text-[#16181d] hover:bg-white hover:text-[#16181d] select-none;
+  }
+  .nav-link-span {
+    @apply text-xs md:text-base;
+  }
+  .header-promo-close-btn {
+    @apply px-4 rounded py-0.5 font-semibold bg-white/[0.035] cursor-default text-[#f0f0f2] transition overflow-hidden;
+  }
+  header {
+    @apply flex flex-col items-center justify-center bg-black/5 p-2;
+  }
+  nav {
+    @apply px-2 pt-1.5 md:px-2.5 md:pt-1 flex items-center justify-between max-w-7xl w-full text-white;
+  }
+  .nav-link-icon {
+    @apply text-2xl md:text-[1.35rem];
+  }
+  .footer-links-panel-item {
+    @apply border-b-[1.5px] border-transparent hover:border-white w-fit transition md:duration-200 ease-in;
+  }
+  .footer-panel-h2 {
+    @apply font-semibold text-base py-2 px-4 text-center bg-white/5 rounded-b-md;
+  }
+  .footer-link-card {
+    @apply flex flex-col items-start justify-center bg-gradient-to-tl hover:bg-gradient-to-br from-[#16181d] from-85% to-[#646674] text-[#fdfdff] rounded-md w-full;
+  }
+  .footer-card-h3 {
+    @apply font-semibold text-base py-2 px-4 text-center bg-white/5 w-full rounded-t-md mb-2.5;
+  }
+  .social-link-item {
+    @apply p-2.5 md:p-4 bg-white rounded-full hover:text-[#fdfdff] hover:scale-110 active:scale-100 transition md:duration-200 ease-in;
+  }
+  .social-link-ig-addon {
+    @apply hover:bg-gradient-to-tr text-[#fd1d1d] from-[#f56040] via-[#fd1d1d] via-80% to-[#c13584] active:from-[#f56040]/85 active:via-[#fd1d1d]/85 active:to-[#c13584]/85;
+  }
+  .programming-lang-card {
+    @apply cursor-pointer p-2 md:p-4 rounded bg-gradient-to-tl hover:bg-gradient-to-br from-[#16181d] from-70% to-[#646674] font-semibold text-white flex flex-col gap-1 md:gap-2 items-center justify-center;
+  }
+  .back-to-top-btn {
+    @apply font-semibold text-base py-[0.3rem] px-4 text-center bg-white/5 text-[#fdfdff]/95 hover:bg-[#16181d]/95 active:bg-white/5 active:scale-95 border-x-[1.5px] border-b-[1.5px] border-current shadow w-fit rounded-b-md mb-2.5 transition;
+  }
+  .feedback-tab-btn {
+    @apply py-1 md:py-[0.3rem] px-4 font-semibold rounded bg-white/5 text-[#fdfdff] hover:bg-[#16181d] border-[1.5px] active:scale-95 border-[#fdfdff] active:bg-white/5 disabled:opacity-50 min-w-[50%] transition ease-in md:duration-200;
+  }
+  .feedback-tab-input {
+    @apply py-1.5 px-2 text-[#16181d] focus:outline-sky-500 invalid:focus:outline-sky-500 valid:focus:outline-green-500 out-of-range:focus:outline-red-500 rounded;
+  }
+  .animate-reverse-spin {
+    animation: reverse-spin 1s linear infinite;
+  }
+
+  @keyframes reverse-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  button {
+    user-select: none;
+  }
+
+  /*Start Ratings*/
+  :root {
+    --enlarge: scale(1.25);
+    --page-color: steelblue;
+    --star-primary-color: gold;
+    --star-secondary-color: darkgoldenrod;
+  }
+
+  .container-rate {
+    display: grid;
+    place-content: center;
+  }
+
+  .star-group {
+    display: grid;
+    font-size: clamp(2rem, 2rem, 2rem);
+    grid-auto-flow: column;
+  }
+
+  /* reset native input styles */
+  .star {
+    -webkit-appearance: none;
+    align-items: center;
+    appearance: none;
+    cursor: pointer;
+    display: grid;
+    font: inherit;
+    height: 1.15em;
+    justify-items: center;
+    margin: 0;
+    place-content: center;
+    position: relative;
+    width: 1.15em;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .star {
+      transition: all 0.25s;
+    }
+
+    .star:before,
+    .star:after {
+      transition: all 0.25s;
+    }
+  }
+
+  .star:before,
+  .star:after {
+    color: var(--star-primary-color);
+    position: absolute;
+  }
+
+  .star:before {
+    content: "☆";
+  }
+
+  .star:after {
+    content: "✦";
+    font-size: 25%;
+    opacity: 0;
+    right: 20%;
+    top: 20%;
+  }
+
+  /* The checked radio button and each radio button preceding */
+  .star:checked:before,
+  .star:has(~ .star:checked):before {
+    content: "★";
+  }
+
+  #two:checked:after,
+  .star:has(~ #two:checked):after {
+    opacity: 1;
+    right: 14%;
+    top: 10%;
+  }
+
+  #three:checked:before,
+  .star:has(~ #three:checked):before {
+    transform: var(--enlarge);
+  }
+
+  #three:checked:after,
+  .star:has(~ #three:checked):after {
+    opacity: 1;
+    right: 8%;
+    top: 2%;
+    transform: var(--enlarge);
+  }
+
+  #four:checked:before,
+  .star:has(~ #four:checked):before {
+    text-shadow: 0.05em 0.033em 0px var(--star-secondary-color);
+    transform: var(--enlarge);
+  }
+
+  #four:checked:after,
+  .star:has(~ #four:checked):after {
+    opacity: 1;
+    right: 8%;
+    top: 2%;
+    transform: var(--enlarge);
+  }
+
+  #five:checked:before,
+  .star:has(~ #five:checked):before {
+    text-shadow: 0.05em 0.033em 0px var(--star-secondary-color);
+    transform: var(--enlarge);
+  }
+
+  #five:checked:after,
+  .star:has(~ #five:checked):after {
+    opacity: 1;
+    right: 8%;
+    text-shadow: 0.14em 0.075em 0px var(--star-secondary-color);
+    top: 2%;
+    transform: var(--enlarge);
+  }
+
+  .star-group:has(> #five:checked) #one {
+    transform: rotate(-15deg);
+  }
+
+  .star-group:has(> #five:checked) #two {
+    transform: translateY(-20%) rotate(-7.5deg);
+  }
+
+  .star-group:has(> #five:checked) #three {
+    transform: translateY(-30%);
+  }
+
+  .star-group:has(> #five:checked) #four {
+    transform: translateY(-20%) rotate(7.5deg);
+  }
+
+  .star-group:has(> #five:checked) #five {
+    transform: rotate(15deg);
+  }
+
+  .star:focus {
+    outline: none;
+  }
+
+  .star:focus-visible {
+    border-radius: 8px;
+    outline: 2px dashed var(--star-primary-color);
+    outline-offset: 8px;
+    transition: all 0s;
+  }
+}
+
+.active {
+  background-color: white;
+  color: #16181d;
+}
