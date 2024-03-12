@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 function Scanner({ onScanResult }) {
   const [scanResult, setScanResult] = useState(null);
+  const [scannerEnabled, setScannerEnabled] = useState(true);
 
   useEffect(() => {
     const scanner = new Html5QrcodeScanner("reader", {
@@ -10,16 +11,21 @@ function Scanner({ onScanResult }) {
         width: 250,
         height: 250,
       },
-      fps: 3,
+      fps: 5,
     });
 
     const success = (result) => {
-      scanner.clear();
+      if (!scannerEnabled) return; // Ignore if scanner is disabled
+
       setScanResult(result);
-      // Call the onScanResult callback with the result
       if (typeof onScanResult === "function") {
         onScanResult(result);
       }
+
+      setScannerEnabled(false); // Disable scanner temporarily
+      setTimeout(() => {
+        setScannerEnabled(true); // Re-enable scanner after timeout
+      }, 2000); // Adjust timeout duration as needed
     };
 
     const error = (err) => {
@@ -31,7 +37,12 @@ function Scanner({ onScanResult }) {
     return () => {
       scanner.clear();
     };
-  }, [onScanResult]); // This effect should only run once when component mounts
+  }, [onScanResult, scannerEnabled]);
+
+  const handleReset = () => {
+    setScanResult(null);
+    window.location.href = window.location.origin;
+  };
 
   useEffect(() => {
     const imgSelector = 'img[alt="Info icon"]';
@@ -101,25 +112,17 @@ function Scanner({ onScanResult }) {
     }
   }, [scanResult]);
 
-  const handleReset = () => {
-    setScanResult(null);
-    window.location.href = window.location.origin;
-  };
-
   return (
     <>
       {scanResult && (
-        <>
-          {/* <div>Success: {scanResult}</div> */}
-          <div className="absolute bottom-8 w-full flex items-center justify-center z-[101]">
-            <button
-              onClick={handleReset}
-              className="rounded cursor-pointer px-6 py-2 bg-sky-500/90 text-white font-semibold"
-            >
-              Re-Scan
-            </button>
-          </div>
-        </>
+        <div className="absolute bottom-8 w-full flex items-center justify-center z-[101]">
+          <button
+            onClick={handleReset}
+            className="rounded cursor-pointer px-6 py-2 bg-sky-500/90 text-white font-semibold"
+          >
+            Re-Scan
+          </button>
+        </div>
       )}
       <div id="reader"></div>
     </>
