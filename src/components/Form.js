@@ -30,9 +30,8 @@ function Form({ scanResult }) {
 
         formData.append("latitude", position.coords.latitude);
         formData.append("longitude", position.coords.longitude);
-      }
-      if (!navigator.geolocation) {
-        alert("Please allow location to continue...");
+      } else {
+        window.alert("Please allow location to continue...");
       }
 
       // Example: log the formData for demonstration
@@ -41,7 +40,7 @@ function Form({ scanResult }) {
       }
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbw-NcvyHfgImItjDgji8I9ysah6St7VZeHCxq__EhKKyfTHWtbK0god8_Zfq3u6sbEf/exec",
+        "https://script.google.com/macros/s/AKfycbyEkuLZbDjFozzyl1zeWaT7pnhgYRntih48PLoyrnG6drlhMlcTwE8DQ3meD1l0-LYs/exec",
         {
           method: "POST",
           body: formData,
@@ -102,7 +101,12 @@ function Form({ scanResult }) {
               className="flex flex-col items-center justify-center gap-6"
             >
               <div className="flex flex-col items-start justify-center bg-white relative">
-                <label className="absolute -top-2.5 py-0.5 px-1.5 text-xs left-2 bg-white rounded" htmlFor="roll">University Roll No.</label>
+                <label
+                  className="absolute -top-2.5 py-0.5 px-1.5 text-xs left-2 bg-white rounded"
+                  htmlFor="roll"
+                >
+                  University Roll No.
+                </label>
                 <input
                   type="tel"
                   name="roll"
