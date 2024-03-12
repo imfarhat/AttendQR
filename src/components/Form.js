@@ -68,7 +68,8 @@ function Form({ scanResult }) {
       setTimeout(() => {
         submitButton.innerHTML = submitBtnInitailaValue;
         submitButton.disabled = false; // Enable submit button
-      }, 2500);
+        window.location.href = window.location.origin;
+      }, 7000);
     }
   };
 
