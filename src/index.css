@@ -54,6 +54,9 @@
   .feedback-tab-input {
     @apply py-1.5 px-2 text-[#16181d] focus:outline-sky-500 invalid:focus:outline-sky-500 valid:focus:outline-green-500 out-of-range:focus:outline-red-500 rounded;
   }
+  button {
+    @apply disabled:bg-black/50 disabled:scale-95 transition duration-150 md:duration-200;
+  }
   .animate-reverse-spin {
     animation: reverse-spin 1s linear infinite;
   }
