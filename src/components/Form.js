@@ -38,7 +38,7 @@ function Form({ scanResult }) {
       }
 
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbyEkuLZbDjFozzyl1zeWaT7pnhgYRntih48PLoyrnG6drlhMlcTwE8DQ3meD1l0-LYs/exec",
+        "https://script.google.com/macros/s/AKfycbwwt6LJMuTgHdbBe0VT7hwKBvep9KFjlpMC6XgBpxYXx-06OuTGvAWuFDbymNxdSIH5/exec",
         {
           method: "POST",
           body: formData,
