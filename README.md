@@ -2,7 +2,7 @@
 
 ## AttendQR : QR Code based Attendance App
 
-[Link to AttendQR App](https://attendqr.pages.dev)
+[Link to AttendQR App](https://attendqr.vercel.app)
 
 ## Available Scripts
 
